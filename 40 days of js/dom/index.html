@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Model</title>
+    <style>
+        body {
+            font-family: Operator Mono;
+        }
+        
+        .secondary {
+            color:chocolate;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="heading"> Welcome to DOM Nodes</h1>
+    <p class="info">Hope you're enjoying the session</p>
+    <button onclick="highlightText()" type="button">Click Me</button>
+
+    <input type="search" id="search" placeholder="search..." onkeyup="searchFruit()">
+    <ul id="fruit-lists">
+        <li>Apple</li>
+        <li>Orange</li>
+        <li>Banana</li>
+        <li>Grapes</li>
+        <li>Jackfruit</li>
+    </ul>
+
+    <div id="div">
+
+    </div>
+
+    <div id="main-id" class="main-class gg">
+        <p class="para-info">
+            <span id="text">I Love DOM</span>
+        </p>
+        <!-- I've added a comment -->
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>

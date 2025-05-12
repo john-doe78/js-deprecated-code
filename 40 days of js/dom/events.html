@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Model</title>
+    <style>
+        * {
+            font-family: Operator Mono;
+        }
+    </style>
+</head>
+<body>
+    <input type="search" id="search" name="searching">Searching
+    <button id="myBtn" onclick="myBtn()">Click me</button>
+    <br>
+    <button id="v2">Count</button>
+    <p></p>
+    <script type="text/javascript">
+        function myBtn() {
+            alert("Clicked");
+        }
+
+        let counter = 0;
+        let btn = document.getElementById("v2");
+        let p = document.querySelector("p");
+        function counterFn() {
+            p.innerText = counter++;
+        }
+
+        // possible to pass multiple events while 
+        btn.addEventListener("click", counterFn);
+        btn.addEventListener("click", () => console.log("Greeting"));
+
+        // remove event listener
+        btn.removeEventListener("click", counterFn);
+
+        // doesn't work because of invalid property
+        document.onDOMContentLoaded = function() {
+            console.log("DOM Content loaded...");
+        }
+        // it works
+        document.addEventListener("DOMContentLoaded", () => console.log("DOM Content loaded..."));
+
+        document.querySelector('input[type="search"]').addEventListener(("change"), function (e) {
+            console.log(e);
+            console.log(`Current Target`, e.currentTarget);
+            console.log(`Target`, e.target.name);
+            // it is refering the current element where event is applied
+            console.log(this);
+        })
+    </script>
+</body>

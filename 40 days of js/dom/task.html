@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-family: Anonymous Pro;
+        }
+    </style>
+</head>
+<body>
+    <h2>Task Manager</h2>
+    <input type="text" id="taskInput" placeholder="Add new task">
+    <button type="button" onclick="btnClick()">Add task</button>
+
+    <input type="text" id="searchInput" placeholder="Search task" onkeyup="search()">
+    <ul id="taskList"></ul>
+
+    <script>
+        function btnClick() {
+            let taskList = document.getElementById("taskList");
+            let textInput = document.getElementById("taskInput");
+
+            if (textInput.value === "") {
+                alert("Search a task");
+            } else {
+                let li = document.createElement("li");
+                li.innerText = textInput.value;
+                taskList.append(li);
+
+                textInput.value = "";
+            }
+        }
+
+        function search() {
+            const searchValue = document.getElementById("searchInput").value.trim().toLowerCase();
+            const tasks = document.querySelectorAll("#taskList li");
+            
+            tasks.forEach((task) => {
+                const taskText = task.textContent.toLowerCase();
+                if (searchValue !== "" && taskText.includes(searchValue)) {
+                    task.style.backgroundColor = "yellow";
+                } else {
+                    task.style.backgroundColor = "";
+                }
+            })
+        }
+    </script>
+</body>
+</html>
