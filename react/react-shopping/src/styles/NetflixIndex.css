@@ -1,0 +1,17 @@
+.bg {
+    background-image: url("https://files.catbox.moe/bytfrw.jpg");
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.bg .box {
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100vh;
+}
+
+.section {
+    height: 60vh;
+}
