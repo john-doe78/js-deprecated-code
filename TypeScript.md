@@ -11,5 +11,5 @@ During my internship at REPLIQ Limited, I optimized database queries and designe
 Please find my resume attached for your review. I look forward to the opportunity to discuss how I can contribute to Kolpolok’s success. Thank you for your time and consideration.
 
 Sincerely,
-Imran Miah
-Mohammadpur, Dhaka
+XXX
+XXX
