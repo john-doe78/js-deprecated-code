@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-family: Operator Mono Light;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // octal number 0o[0-7]
+        let octal = 0o123;
+        document.write(`Octal number is ${octal} <br>`);
+
+        // hexa decimal 0x[0-7][a-f]
+        let hexa = 0x123adf;
+        document.write(`Hexa number is ${hexa} <br>`);
+
+        // binary number 0b[0-1]
+        let binary = 0b1011;
+        document.write(`Binary number is ${binary}`);
+
+        let age = prompt("Enter your age: ");
+        if (!isNaN(age)) {
+            document.write(`<br> Your age is ${age}`);
+        } else {
+            document.write("<br> Enter a valid number");
+        }
+
+        document.write("<br>");
+
+        // numeric string starts with number and can contains chars
+        let numeric = "102A20";
+        document.write(Number.parseInt(numeric));
+        document.write(parseInt(numeric));
+
+        document.write("<br>");
+        numeric = Number.parseInt(prompt("Enter the number"));
+        if (typeof(numeric) === "number") {
+            console.log(`Number is ${numeric + 1}`);
+        } else {
+            console.log("Enter a valid number");
+        }
+    </script>
+</body>
+</html>

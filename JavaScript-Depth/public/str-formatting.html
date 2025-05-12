@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Title</title>
+        <style>
+            * {
+                font-family: Operator Mono;
+            }
+            
+            .foo {
+                font-style: italic;
+            }
+        </style>
+    </head>
+    <body>
+        <label for="username">Username</label>
+        <input type="text" id="username">
+        <p id="error"></p>
+        <label for="ifsc">Ifsc no</label>
+        <input type="text" id="ifsc" onkeyup="uppercase()" />
+        <button onclick="register()" type="submit">Register</button>
+        
+        <script>
+            function register() {
+                let error = document.getElementById("error");
+                let username = document.getElementById('username').value;
+                
+                if (username === "") {
+                    // this works only with non-rc types
+                    error.innerHTML = "Can't be blank".fontcolor("red").bold();
+                    
+                    // format string with style
+                    // styles can't be directly applied to string lik chaining
+                    // they are applied only to element that handles the string
+                    error.innerHTML = "Can't be blank";
+                    error.style.color = "red";
+                    error.style.fontFamily = "serif";
+                    error.style.fontWeight = 700;
+
+                    // format string with class
+                    error.className = "foo";
+                } else {
+                    error.innerText = "";
+                    alert("Registered");
+                }
+            }
+            
+            function uppercase() {
+                let ifsc = document.getElementById("ifsc").value;
+                document.getElementById("ifsc").value = ifsc.toUpperCase();
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            font-family: Anonymous Pro;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn" onclick=btnClick()> Add image</button>
+    <div id="container"></div>
+
+    <script>
+        let values = [20, 30, 45, 95, 85];
+        values["hi"] = "Hola";
+        values.push(5, 15);
+        let x = values.splice(1, 0, 27, 28);
+        document.write("Values <br>");
+        for (let property in values) {
+            document.write(`${property}: ${values[property]} <br>`);
+        }
+
+        let menu = Array.from(values); // shallow copy
+        menu.unshift(100, 200);
+        console.log(menu);
+
+        document.write(" Menu <br>");
+        for (let property in menu) {
+            document.write(`${property}: ${menu[property]} <br>`);
+        }
+
+        const cities = [
+            "New York",
+            "Los Angeles",
+            "Chicago",
+            "Houston",
+            "Phoenix",
+            "Philadelphia",
+            "San Antonio",
+            "San Diego",
+            "Dallas",
+            "San Jose"
+        ];
+
+        document.write(`<br> ${cities} `);
+        cities.sort();
+        document.write(`<br> ${cities} `);
+
+        function btnClick() {
+            let container = document.querySelector("div");
+            container.innerText = "";
+
+            let pic = document.createElement("img");
+            pic.alt = "leya-falcon";
+            pic.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwuyk-Bckb30tUPVSWsl8BGMiVjhCWgMjgBQ&s";
+
+            container.append(pic);
+        }
+        
+    </script>
+</body>
+</html>

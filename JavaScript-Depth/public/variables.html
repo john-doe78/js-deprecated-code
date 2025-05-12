@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Types</title>
+    <style>
+        * {
+            font-family: Operator Mono;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // global scope of a variable is defined by using outside function
+        // and inside a module scope.
+        "use struct";
+
+        var x = 10;
+        let y = 20;
+        const z = 30;
+
+        function f1() {
+            window.aa = "John Doe";
+            document.write(`Function 1 X is ${x} Y is ${y} Z is ${z} <br>`);
+        }
+
+        f1();
+
+        function f2() {
+            console.log(aa);
+            document.write(`Function 2 X is ${x} Y is ${y} Z is ${z}`);
+        }
+
+        f2();
+
+        
+        let [t, u, ...v] = "Hello, World";
+        console.log(v);
+    </script>
+</body>
+</html>

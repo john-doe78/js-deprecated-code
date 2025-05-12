@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Title</title>
+    </head>
+    <body>
+        <script>
+            let link = "<a href=''>Home</a> <br>";
+            document.write(link);
+            
+            let username = prompt("Enter name:");
+            let age = Number.parseInt(prompt("Enter age:"));
+            document.write("Hello " + username + ", you'll be " + (age+ 1) + " next year <br>");
+            /* Data Binding
+             * data binding is a technique of binding the data of any source to the UI
+             * accessing data from source and presenting to UI (dynamic)
+            */  
+            document.write(`
+            Hello! ${username.bold()},
+            You'll be ${age+1} next year
+            `);
+        </script>
+    </body>
+</html>

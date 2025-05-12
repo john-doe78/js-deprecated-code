@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello, World</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+</head>
+<body>
+    <h3>Name: <span></span></h3>
+    <h3>Age: <span id="span"></span></h3>
+
+    <label for="folderName">Name</label>
+    <input type="text" name="folderName" id="folderName" placeholder="Provide a name">
+    <button onclick="InputEle()">Create Folder</button>
+    <h4 style="color: red;"></h4>
+    <p></p>
+
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script>
+        function promptLoad() {
+            let name = prompt("Name: ", "John Doe");
+            let age = prompt("Age: ", 25);
+
+            let span = document.querySelector("span");
+            let ageSpan = document.getElementById("span");
+
+            if (name === "") {
+                alert("Name can't be empty");
+            } else if (name === null) {
+                alert("You canceled");
+            } else {
+                span.innerText = name;
+                ageSpan.innerText = age;
+            }
+        }
+
+        function loading() {
+            let span = document.querySelector("span");
+            let ageSpan = document.getElementById("span");
+
+            let str = location.search; // ?name=John&age=28
+            let name = str.substring(str.indexOf("=") + 1, 10);
+            let age = str.substring(str.indexOf("&") + 5);
+            span.innerText = name;
+            ageSpan.innerText = age;
+        }
+
+        function queryStrLoading() {
+            let span = document.querySelector("span");
+            let ageSpan = document.getElementById("span");
+
+            let str = location.search.substring(1);
+            let params = new URLSearchParams(str);
+            let name = params.get("name");
+            let age = params.get("age");
+
+            span.innerText = name;
+            ageSpan.innerText = age;
+        }
+
+        function InputEle() {
+            let paragraph = document.querySelector("p");
+            let error = document.querySelector("h4");
+            let input = document.querySelector("input[type=text]");
+
+            if (input.value === "") {
+                error.innerText = "You can't leave it empty";
+                paragraph.innerText = "";
+            } else {
+                paragraph.innerText = input.value;
+            }
+
+            if (input.value) {
+                error.innerText = "";
+            }
+
+            input.value = "";
+        }
+    </script>
+</body>
+</html>
