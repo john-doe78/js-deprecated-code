@@ -14,7 +14,3 @@ insert into employees (e_id, e_name, dept, salary) values
 
 write a query to display all the dept names where no of employees are less than 2
 
-Question 5: 
-
-https://w2.pornhoarder.tv/video/new-hazel-moore-teen-first-tight-anal-casting/UTVKczBvakt5TjZPQlZoZHZqYWxiczhVMDhJOHFtZ054bU00SkVFVkpLYz0=
-
